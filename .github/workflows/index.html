@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angel Adames | Portfolio</title>
+    <!-- Favicon -->
+    <link rel="icon" href="path/to/favicon.ico" type="image/x-icon">
+    <!-- DM Sans Font -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+          --bg-color: #ffffff;
+          --text-color: #333333;
+          --accent-color: #0066cc;
+          --skill-bg-java: #f8981d;
+          --skill-bg-css: #2965f1;
+          --skill-bg-sql: #00758f;
+          --skill-bg-idea: #000000;
+          --skill-bg-scene: #6faab0;
+          --transition-speed: 0.3s;
+          --fade-speed: 0.2s;
+        }
+        .dark {
+          --bg-color: #1e1e1e;
+          --text-color: #dddddd;
+          --accent-color: #3399ff;
+        }
+
+        /* Reset & Base */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+          background: var(--bg-color);
+          color: var(--text-color);
+          font-family: 'DM Sans', sans-serif;
+          font-size: 1rem;
+          line-height: 1.8;
+          transition: background var(--transition-speed), color var(--transition-speed);
+          -webkit-font-smoothing: antialiased;
+          text-rendering: optimizeLegibility;
+        }
+        p { letter-spacing: 0.5px; }
+        h2 {
+          font-size: 1.75rem;
+          font-weight: 500;
+          letter-spacing: 1px;
+          display: inline-block;
+          margin-bottom: 1rem;
+          padding-bottom: 0.5rem;
+          position: relative;
+        }
+        h2::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 3rem; height: 2px; background: var(--accent-color); }
+
+        a { color: var(--accent-color); text-decoration: none; transition: color 0.2s; }
+        a:hover { text-decoration: underline; }
+
+        /* Header */
+        header {
+          position: relative;
+          display: flex;
+          align-items: center;
+          padding: 1rem 2rem;
+          border-bottom: 1px solid var(--text-color);
+        }
+        .avatar { width: 3rem; height: 3rem; border-radius: 50%; overflow: hidden; margin-right: 1rem; background: #ccc; flex-shrink: 0; }
+        .avatar img { width: 100%; height: 100%; object-fit: cover; }
+        h1 { font-size: 2.75rem; font-weight: 700; letter-spacing: 1px; }
+        nav { margin-left: auto; margin-right: 3rem; }
+        nav ul { display: flex; gap: 1rem; list-style: none; }
+        nav a { position: relative; font-weight: 500; }
+        nav a::after { content: ''; position: absolute; left: 0; bottom: -2px; width: 100%; height: 2px; background: var(--accent-color); transform: scaleX(0); transform-origin: right; transition: transform var(--transition-speed) ease-in-out; }
+        nav a:hover::after { transform: scaleX(1); transform-origin: left; }
+        .theme-toggle-btn { position: absolute; top: 1rem; right: 1rem; width: 2rem; height: 2rem; display: flex; align-items: center; justify-content: center; background: none; border: 1px solid var(--text-color); border-radius: 0.5rem; cursor: pointer; font-size: 1rem; transition: background var(--transition-speed), color var(--transition-speed); }
+
+        /* Main Content */
+        main { max-width: 800px; margin: 0 auto; padding: 3rem 2rem; text-align: center; }
+        section { margin-bottom: 4rem; opacity: 0; transform: translateY(20px); transition: opacity var(--transition-speed) ease-out, transform var(--transition-speed) ease-out; }
+        section.visible { opacity: 1; transform: translateY(0); }
+
+        /* Lists */
+        ul { list-style: none; padding: 0; margin: 1rem auto; }
+        ul li { margin-bottom: 1rem; }
+
+        /* Skills Badges */
+        .skills-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 1rem; }
+        .skill-badge { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 0.5rem; color: #fff; font-weight: 500; font-size: 1rem; transition: transform var(--transition-speed); }
+        .skill-badge:hover { transform: scale(1.05); }
+        .skill-java  { background: var(--skill-bg-java); }
+        .skill-css   { background: var(--skill-bg-css); }
+        .skill-sql   { background: var(--skill-bg-sql); }
+        .skill-idea  { background: var(--skill-bg-idea); }
+        .skill-scene { background: var(--skill-bg-scene); }
+        .skill-badge img { width: 1rem; height: 1rem; display: block; }
+
+        /* Back-to-Top Button */
+        #back-to-top { position: fixed; bottom: 1.5rem; right: 1.5rem; width: 2.5rem; height: 2.5rem; background: var(--accent-color); color: #fff; border: none; border-radius: 50%; cursor: pointer; font-size: 1.2rem; opacity: 0; pointer-events: none; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 6px rgba(0,0,0,0.2); transition: opacity var(--fade-speed) ease-in-out, transform var(--transition-speed); }
+        #back-to-top.show { opacity: 1; pointer-events: auto; }
+        #back-to-top:hover { transform: scale(1.1); }
+
+        /* Footer */
+        footer { text-align: center; padding: 1rem; border-top: 1px solid var(--text-color); font-size: 0.9rem; }
+
+        /* Mobile */
+        @media (max-width: 600px) { header { flex-direction: column; align-items:flex-start; } nav { margin: 1rem 0; } main { padding: 2rem 1rem; } .avatar { width:4rem; height:4rem; } h1 { font-size:2rem; } }
+    </style>
+</head>
+<body>
+<header>
+    <div class="avatar"><img src="path/to/photo.jpg" alt="Angel Adames"></div>
+    <h1>Angel Adames</h1>
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">☾</button>
+</header>
+<main>
+    <section id="about"><h2>About Me</h2><p>Brief introduction about yourself. Replace this text with your bio.</p></section>
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <div class="skill-badge skill-java"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="Java">Java</div>
+            <div class="skill-badge skill-css"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="CSS3">CSS</div>
+            <div class="skill-badge skill-sql"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg" alt="MySQL">SQL</div>
+            <div class="skill-badge skill-idea"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/intellij/intellij-original.svg" alt="IntelliJ IDEA">IntelliJ</div>
+            <div class="skill-badge skill-scene"><img src="https://raw.githubusercontent.com/javafxscenebuilder/SceneBuilder/master/SceneBuilder-Icon_256x256.png" alt="Scene Builder">Scene Builder</div>
+        </div>
+    </section>
+    <section id="projects">
+        <h2>Projects</h2>
+        <ul>
+            <li><strong>Project One</strong> - Short description. <a href="#">View Repo</a></li>
+            <li><strong>Project Two</strong> - Short description. <a href="#">View Repo</a></li>
+        </ul>
+    </section>
+    <section id="contact">
+        <h2>Contact</h2>
+        <ul>
+            <li><a href="mailto:angelamarante65@gmail.com">angelamarante65@gmail.com</a></li>
+            <li><a href="https://www.linkedin.com/in/yohangel-adames-193869201/">linkedin.com/in/yohangel-adames-193869201</a></li>
+        </ul>
+    </section>
+</main>
+<footer><p>&copy; 2025 Angel Adames. All rights reserved.</p></footer>
+<button id="back-to-top" aria-label="Scroll to top">↑</button>
+<script>
+    // Theme toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const htmlEl = document.documentElement;
+    themeToggle.addEventListener('click', () => {
+      htmlEl.classList.toggle('dark');
+      themeToggle.textContent = htmlEl.classList.contains('dark') ? '☀️' : '☾';
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+    (function() {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) htmlEl.classList.add('dark');
+      themeToggle.textContent = htmlEl.classList.contains('dark') ? '☀️' : '☾';
+    })();
+
+    // Fade-in sections
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('section').forEach(s => observer.observe(s));
+
+    // Back-to-top
+    const btn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('show', window.scrollY > 150);
+    });
+    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+</script>
+</body>
+</html>
