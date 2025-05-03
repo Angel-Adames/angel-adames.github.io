@@ -1,30 +1,32 @@
-# Portfolio Website
+# 🌐 Portfolio Website
 
 Welcome to my GitHub.io portfolio! This site serves as a digital showcase for my projects, professional skills, and ongoing work in software development.
 
-## About
+## 👋 About
 
 This portfolio provides a concise overview of my:
-- Featured projects
-- Technical skills
-- Professional experience
-- Achievements and certifications
+
+- 💻 Featured projects
+- 🛠️ Technical skills
+- 👨‍💻 Professional experience
+- 🏆 Achievements and certifications
 
 Visit the site at: **https://Angel-Adames.github.io/**
 
-## Structure
+## 🏗️ Structure
 
 The repository includes:
-- **index.html** – The homepage presenting project highlights and background information.
-- **404.html** – A custom error page for improved user experience.
-- Static assets managed for performance and compatibility with GitHub Pages.
 
-## Workflows
+- 🏠 **index.html** – The homepage presenting project highlights and background information.
+- ⚠️ **404.html** – A custom error page for improved user experience.
+- 📁 Static assets managed for performance and compatibility with GitHub Pages.
+
+## ⚡ Workflows
 
 - **GitHub Pages**: The site is published automatically using GitHub Pages. All commits to the repository are reflected online.
 - **Source Control**: Git is used for version management and collaboration.
 
-## Getting Started
+## 🚀 Getting Started
 
 If you'd like to use this portfolio as a template for your own site, follow these steps:
 
@@ -56,7 +58,7 @@ If you'd like to use this portfolio as a template for your own site, follow thes
 
 - Distribute your link professionally as part of your personal and career development profile.
 
-## Contributing
+## 🤝 Contributing
 
 If you have suggestions for improvement, please open an issue or submit a pull request.  
 For collaboration or feedback, feel free to contact me directly.
