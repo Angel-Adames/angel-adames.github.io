@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Angel Adames | Portfolio</title>
     <!-- Favicon -->
-    <link rel="icon" href="images/profile_picture.png" type="image/x-icon">
+    <link rel="icon" href="images/new_tab.svg" type="image/x-icon">
     <!-- DM Sans Font -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
@@ -26,7 +26,19 @@
           --text-color: #dddddd;
           --accent-color: #3399ff;
         }
-
+        .resume-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--accent-color);
+            border-radius: 0.25rem;
+            font-weight: 500;
+        }
+        .resume-link:hover {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            text-decoration: none;
+        }
         /* Reset & Base */
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
@@ -63,7 +75,7 @@
           padding: 1rem 2rem;
           border-bottom: 1px solid var(--text-color);
         }
-        .avatar { width: 3rem; height: 3rem; border-radius: 50%; overflow: hidden; margin-right: 1rem; background: #ccc; flex-shrink: 0; }
+        .avatar { width: 5rem; height: 5rem; border-radius: 50%; overflow: hidden; margin-right: 1rem; background: #ccc; flex-shrink: 0; border: 2.5px solid var(--text-color); }
         .avatar img { width: 100%; height: 100%; object-fit: cover; }
         h1 { font-size: 2.75rem; font-weight: 700; letter-spacing: 1px; }
         nav { margin-left: auto; margin-right: 3rem; }
@@ -107,7 +119,7 @@
 </head>
 <body>
 <header>
-    <div class="avatar"><img src="images/profile_photo.png" alt="Angel Adames"></div>
+    <div class="avatar"><img src="images/profile_picture.png" alt="Angel Adames"></div>
     <h1>Angel Adames</h1>
     <nav aria-label="Main navigation">
         <ul>
@@ -125,6 +137,7 @@
         <p>Hi, I'm Yohangel Adames — a Computer Science student at Farmingdale State College with a passion for becoming a software engineer. I'm gaining hands-on experience through personal projects, collaborative group work, and coursework. I enjoy exploring programming languages, sharpening my skills, and contributing to meaningful, real-world technologies.</p>
         <p>My current interests include software development, particularly front-end and UI design. Long-term, I aim to work collaboratively with a team of developers in a professional software engineering environment. Some future projects I plan to create include a live Lo-Fi music player web application, a universal file converter, and an AI-powered video summarizer.</p>
         <p>Outside of coding, I enjoy weightlifting, hiking, and growing in my faith, something I strive to reflect in both my work and how I treat others.</p>
+        <p><a href="images/Yohangel_Adames_Resume.pdf" target="_blank" rel="noopener noreferrer">Download Resume (PDF)</a></p>
     </section>
     <section id="skills">
         <h2>Skills</h2>
